@@ -1,0 +1,19 @@
+1.pre-decide the relative propotion of num of element for each cluster.
+(n_train(i) & n_test(i) : i to decide which cluster to specify)
+
+2.X_train & X_test
+respectively stores details of each element of each cluster , 
+either test or training 
+element format : 1*4
+
+3.Y_train & Y_test
+respectively stores the label of each element of each cluster ,
+either test or training
+vector format:
+--1
+--1
+  .
+  .(num of element of cluster1)
+--2
+  .
+  .

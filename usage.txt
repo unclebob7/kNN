@@ -1,0 +1,16 @@
+
+%% 求OA和Kappa
+%% 第一个参数是test数据的真实标签；第二个参数是算法预测出来的标签。
+[fid, OA,  ProdA,  Kappa,  UserA] = confusion_ML(test_label, prediction); 
+
+
+%% 根据整个图像的预测分类结果，画出来分类结果图
+%% 输入NbRow是图像行数，NbCol是图像列数，ColorTable是用来画图的色表，result_img_knn是算法得到的预测结果，大小是NbRow*NbCol的。
+%% 输出结果ClassificationMap  是用来画图的（NbRow*NbCol*3）。
+
+ClassificationMap  = GenerateClassificationMap( NbRow, NbCol, ColorTable, reshape(result_img_knn', NbRow*NbCol,1));
+
+figure
+image(ClassificationMap);  axis off; 
+imwrite(ClassificationMap, 'ClassificationMap.bmp’, 'bmp'); 
+
